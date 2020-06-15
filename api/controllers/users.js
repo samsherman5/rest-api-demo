@@ -84,6 +84,8 @@ exports.login_create_token = (req, res, next) => {
         });
 };
 
+
+
 exports.delete_user = (req, res, next) =>{
     const id = req.params.userId;
     User.deleteOne({_id: id})
