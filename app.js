@@ -1,5 +1,4 @@
 const express = require('express');
-const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -7,12 +6,14 @@ const mongoose = require('mongoose');
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
 const userRoutes = require('./api/routes/users');
-const accountRoutes = require('./api/routes/accounts')
+const accountRoutes = require('./api/routes/accounts');
+
+const app = express();
 
 mongoose.connect(
     'mongodb+srv://samsherman:'
      + process.env.MONGO_ATLAS_PW +
-     '@node-backend-0jxkg.mongodb.net/<dbname>?retryWrites=true&w=majority',
+     '@cluster0.0jxkg.gcp.mongodb.net/Cluster0?retryWrites=true&w=majority',
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
